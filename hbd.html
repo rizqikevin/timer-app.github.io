@@ -1,0 +1,87 @@
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <title>Percobaan Kevin</title>
+    
+  </head>
+  <body class="body">
+    <audio class="audio" src="../asset/music.mp3" autoplay type="audio" loop=""></audio>
+    <div class="open">
+      <div class="card">
+        <h2></h2>
+          <img onclick="mulai()" src="../asset/2.jpg" alt="" srcset="" width="150vw"  />
+        <h3>Coba Pencet ini bisa ga by?</h3>
+      </div>
+    </div>
+    <div class="atas" id="atas">
+      <img onclick="mulai()" src="../asset/3.png" alt="" /> 
+      <h2>Happy level up, bbyy</h2>
+      <div id="particles"></div>
+    </div>
+
+    <p data-aos="zoom-in">On this day</p>
+    <p data-aos="zoom-in">20 Juni 2024</p>
+    <p data-aos="zoom-in">Has lived on this earth for 23 beautiful years</p>
+    <p data-aos="zoom-in">To my sweetest girlfriend ever, I wish you a fruitful and wonderful year </p>
+    <p data-aos="zoom-in">Happy Birthday Sayangkuu :) </p>
+    
+    <p data-aos="zoom-in">Touch the love for other
+      <i onclick="tanya()" class="material-icons-sharp"> favorite </i></p>
+    <p data-aos="zoom-in"> ikon love di atas, jangan lupa di pencet yaa by </p>
+    <script>
+
+      var musik = "";
+
+    </script>
+    
+    <script> 
+      AOS.init({ once: true, }); 
+    </script>
+
+    <script> 
+      var audio = document.querySelector(".audio"); 
+      if(musik) {
+        audio.src = musik;
+      } 
+
+      function mulai() { 
+        audio.play(); 
+        document.querySelector(".open").style = "opacity: 0;"; 
+        document.querySelector(".body").style = "overflow-y: scroll;"; 
+
+        setTimeout(function () { 
+          document.querySelector(".open").style.display = "none"; 
+        }, 1000); 
+      } 
+      
+      function page2() { 
+    window.location.href = "page2.html"; 
+}
+      async function tanya() { 
+        var { value: kado } = await swal.fire({ title: "masih ada lagi loh kamu mau liat ga sayang?", input: "text", showCancelButton: false, }); 
+        if (kado) { 
+          await swal.fire("beneran mau liat?"); 
+          page2(kado); 
+        } else { 
+          await swal.fire("Jangan dikosongin dong sayang"); 
+        tanya(); 
+      } 
+    } 
+
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fireworks@2/tsparticles.preset.fireworks.bundle.min.js"></script>
+    <script src="../asset/app.js"></script>
+ 
+  </body>
+</html>
